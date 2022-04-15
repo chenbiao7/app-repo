@@ -9,7 +9,6 @@ pipeline {
                 script {
                     echo "1.2 In scripts"
                     build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-                    echo ${build_tag}
                     repo_name = '939921924936.dkr.ecr.us-east-1.amazonaws.com'
                     app_name = 'gitops-app-demo'
                 }
