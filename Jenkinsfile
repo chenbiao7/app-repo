@@ -6,7 +6,7 @@ pipeline {
         stage('Get Source') {
             steps {
                 echo "1.Clone Repo Stage"
-                git credentialsId: 'GitHubAccess', url: 'https://github.com/chenbiao7/gitops-app'
+                git credentialsId: 'GitHubAccess', url: 'https://github.com/chenbiao7/gitops-app.git'
                 echo "1.1 Clone Finished"
                 script {
                     echo "1.2 In scripts"
