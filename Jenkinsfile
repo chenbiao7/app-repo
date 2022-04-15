@@ -18,6 +18,7 @@ pipeline {
             }
         }
         stage('Build Image') {
+            echo "2.Build Image With Tag"
             steps {
                 echo "2.Build Docker Image Stage"
                 sh "docker build --network host -t ${repo_name}/${app_name}:latest ."
@@ -26,6 +27,7 @@ pipeline {
 
         }
         stage('Push Image') {
+            echo "3.Push With My Image"
             steps {
                 echo "3.Push Docker Image Stage"
                 withDockerRegistry(credentialsId: 'ecr:us-east-1:AWS-AKSK', url: 'https://939921924936.dkr.ecr.us-east-1.amazonaws.com/gitops-app') {
