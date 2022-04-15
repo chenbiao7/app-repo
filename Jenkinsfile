@@ -7,8 +7,11 @@ pipeline {
             steps {
                 echo "1.Clone Repo Stage"
                 git credentialsId: 'GitHubAccess', url: 'https://github.com/chenbiao7/gitops-app'
+                echo "1.1 Clone Finished"
                 script {
+                    echo "1.2 In scripts"
                     build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+                    echo ${build_tag}
                     repo_name = '939921924936.dkr.ecr.us-east-1.amazonaws.com'
                     app_name = 'gitops-app-demo'
                 }
