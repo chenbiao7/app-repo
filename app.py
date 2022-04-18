@@ -15,4 +15,5 @@ def info():
     return render_template('index.html', hostname=hostname, time=time)
  
 if __name__ == '__main__':
+    # this is test
     app.run(host='0.0.0.0', port=80, debug=True)
